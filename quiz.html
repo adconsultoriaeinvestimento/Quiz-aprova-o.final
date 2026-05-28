@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz de Aprovação Thayana Petrobras 2026-2027</title>
+  <link rel="stylesheet" href="quiz.css" />
+</head>
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Método de Estudo da Thayana</p>
+      <h1>Quiz de Aprovação Thayana Petrobras 2026-2027</h1>
+      <p class="subtitle">Simulados por disciplina com gabarito automático, desempenho, gráficos e revisão de erros.</p>
+      <div class="hero-badges">
+        <span>Estilo Cesgranrio</span>
+        <span>Ênfase 16</span>
+        <span>20 questões por disciplina</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="app">
+    <section class="panel config-panel">
+      <h2>Configuração do Simulado</h2>
+      <label for="studentName">Seu nome</label>
+      <input id="studentName" type="text" placeholder="Ex: Thayana Vilaça" />
+
+      <label for="disciplineSelect">Disciplina</label>
+      <select id="disciplineSelect"></select>
+
+      <label for="amountSelect">Quantidade de questões</label>
+      <select id="amountSelect">
+        <option value="5">5 questões</option>
+        <option value="10">10 questões</option>
+        <option value="15">15 questões</option>
+        <option value="20" selected>20 questões</option>
+      </select>
+
+      <button id="startBtn" class="primary">Iniciar Simulado</button>
+      <button id="restartBtn" class="secondary">Reiniciar</button>
+
+      <div class="topic-box">
+        <h3>Tópicos de Alto Impacto</h3>
+        <ul id="topicList"></ul>
+      </div>
+
+      <div class="trap-box">
+        <h3>Armadilhas da Banca</h3>
+        <ul id="trapList"></ul>
+      </div>
+    </section>
+
+    <section class="panel quiz-panel">
+      <div class="quiz-top">
+        <div>
+          <p class="eyebrow">Simulador Online</p>
+          <h2 id="quizTitle">Escolha uma disciplina para começar</h2>
+        </div>
+        <div class="score-pill"><span id="questionCounter">0/0</span></div>
+      </div>
+      <div class="progress"><div id="progressBar"></div></div>
+      <div id="questionArea" class="question-card">
+        <p class="empty">Configure o simulado à esquerda e clique em <strong>Iniciar Simulado</strong>.</p>
+      </div>
+      <div class="actions">
+        <button id="prevBtn" class="secondary">← Anterior</button>
+        <button id="confirmBtn" class="primary">Confirmar Resposta</button>
+        <button id="nextBtn" class="secondary">Próxima →</button>
+        <button id="finishBtn" class="success">Finalizar e Ver Resultado</button>
+      </div>
+    </section>
+
+    <section class="panel result-panel">
+      <div class="result-header">
+        <div>
+          <p class="eyebrow">Desempenho</p>
+          <h2>Resultado Final</h2>
+        </div>
+        <button id="downloadCsvBtn" class="secondary">Baixar histórico CSV</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><span id="totalQuestions">0</span><small>Questões</small></div>
+        <div class="stat"><span id="totalCorrect">0</span><small>Acertos</small></div>
+        <div class="stat"><span id="totalWrong">0</span><small>Erros</small></div>
+        <div class="stat"><span id="accuracy">0%</span><small>Aproveitamento</small></div>
+      </div>
+
+      <canvas id="resultChart" width="600" height="260"></canvas>
+      <div id="levelBox" class="level-box">Seu nível aparecerá aqui.</div>
+
+      <h3>Gabarito Corrigido</h3>
+      <div id="answerKey" class="answer-key"></div>
+
+      <h3>Histórico salvo neste navegador</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Data</th><th>Nome</th><th>Disciplina</th><th>Qtd</th><th>Acertos</th><th>%</th></tr>
+          </thead>
+          <tbody id="historyTable"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projeto: Quiz de Aprovação Thayana Petrobras 2026-2027 • Página exclusiva de simulados</p>
+  </footer>
+  <script src="quiz.js"></script>
+</body>
+</html>
